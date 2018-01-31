@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:page_title) %> | MyBlog</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700 rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= render 'layouts/navbar' %>
+    <!-- Can use the navbar here also instead of separated html -->
+  	<div class="container <%= controller_name %> <%= action_name %>">
+    <%= yield %>
+    </div>
+  </body>
+</html>

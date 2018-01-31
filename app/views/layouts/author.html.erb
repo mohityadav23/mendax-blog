@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:page_title) %> | MyBlog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
+
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %> <!-- Can use the navbar here also instead of separated html -->
+  	<div class="container <%= controller_name %> <%= action_name %>">
+
+      <% if flash.any? %>
+        <% flash.keys.each do |key| %>
+          <div class="alert alert-<%= key.to_s %> alert-dismissible fade show container" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <%= flash[key] %>
+          </div>
+        <% end %>
+      <% end %>
+     <%= yield %>
+    </div>
+
+  </body>
+</html>

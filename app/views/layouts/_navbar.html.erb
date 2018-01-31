@@ -1,0 +1,60 @@
+<div class="collapse" id="exCollapsingNavbar">
+  <div class="collapse-bg p-a-1">
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
+        </li>
+        <% if author_signed_in? %>
+          <li class="list-group-item">
+            <%= link_to 'My posts', authors_posts_path, class: "nav-link #{yield(:author)}" %>
+          </li>
+          <li class="list-group-item">
+            <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-primary navbar-toggleable-md navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+    Mendax<span class="light">Blog</span>
+    </a>
+    <button class="navbar-toggler hidden-sm-up pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+    &#9776;
+    </button>
+    <ul class="nav navbar-nav pull-sm-right hidden-xs-down">
+      <li class="nav-item">
+        <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'About', about_path, class: "nav-link #{yield(:about_active)}" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
+      </li>
+      <% if author_signed_in? %>
+          <li class="nav-item dropdown author-nav">
+            <a class="nav-link dropdown-toggle <%= yield(:author) %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag(current_author.gravatar_image_url) %>
+              <%= current_author.display_name%>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to 'My posts', authors_posts_path, class: "dropdown-item" %>
+              <%= link_to 'Account', authors_account_path, class: "dropdown-item" %>
+              <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

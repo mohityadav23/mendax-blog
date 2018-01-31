@@ -1,0 +1,58 @@
+.navbar {
+	border-radius: 0;
+	margin-bottom: 20px;
+	// background-color: $primary-color;
+	.navbar-brand {
+		font-weight: 300;
+		color: $accent-color;
+		.light{
+			font-weight: 200;
+			color: $primary-color-text;
+		}
+	}
+	.navbar-toggler {
+		outline: none;
+	}
+	.nav-link {
+		font-weight: 300;
+		color: $secondary-text-color !important;
+		&.active{
+			color:$accent-color !important;
+		}
+	}
+	.nav-item.author-nav {
+		img{
+			height: 30px;
+			width: 30px;
+			border-radius: 50%;
+			border: 1px solid $primary-color-light;
+		}
+	}
+}
+
+
+.collapse-bg{
+	padding: 0 !important;
+	.card{
+		margin-bottom: 0;
+		border-radius: 0;
+		border: none;
+	}
+}
+
+.collapse-bg .card .list-group-item{
+	padding: 0;
+	border-radius: 0 !important;
+	border-color: black;
+	a {
+		background-color: #1a1a1a;
+		color: #bdc3c7;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		&:active{
+			color: white;
+			border-bottom: none;
+		}
+	}
+}

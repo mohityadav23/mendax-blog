@@ -1,0 +1,40 @@
+body{
+	background-color: $light-gray;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+	color: $primary-text-color;
+}
+
+h1, .card-title{
+	font-weight: bold;
+}
+
+h6{
+	color: $secondary-text-color;
+	font-weight: 300;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif !important;	
+}
+
+p , p span{
+	font-family: 'Montserrat', sans-serif;	
+	font-size: 18px;
+}
+
+.btn{
+	font-weight: 200;
+	color: $primary-color-text;
+}
+
+.jumbotron{
+	.display-3{
+		margin-left: 10px !important;
+	}
+	
+}
+
+
