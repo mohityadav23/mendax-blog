@@ -1,6 +1,5 @@
-<% provide(:page_title,"All Posts") %> 
-<% provide(:blog_active,"active") %> 
-
+<% provide(:page_title,"All Posts") %>
+<% provide(:blog_active,"active") %>
 <div class="row">
     <%= render @posts %>
 </div>
@@ -8,4 +7,3 @@
 <div class="apple_pagination">
 	<%= will_paginate @posts, container: false %>
 </div>
-
