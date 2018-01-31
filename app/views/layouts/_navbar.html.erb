@@ -44,7 +44,7 @@
       </li>
       <% if author_signed_in? %>
         <li class="nav-item">
-          <%= link_to 'Account',authors_account_path, class: "nav-link #{yield(:sign_in_active)}" %>
+          <!-- <%= link_to 'Account',authors_account_path, class: "nav-link #{yield(:sign_in_active)}" %> -->
         </li>
       <% else %>
         <li class="nav-item">
@@ -59,7 +59,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <%= link_to 'My posts', authors_posts_path, class: "dropdown-item" %>
-              <!-- <%= link_to 'Account', authors_account_path, class: "dropdown-item" %> -->
+              <%= link_to 'Account', authors_account_path, class: "dropdown-item" %>
               <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
